@@ -7,6 +7,7 @@ const stream = new Sse();
 const potterFactRouter = require("./potterfacts/router");
 const potterQuoteRouter = require("./potterquotes/router");
 const potterHeadRouter = require("./potterheads/router");
+const authRouter = require("./auth/router");
 
 const port = process.env.PORT || 4002;
 const app = express();
@@ -20,5 +21,6 @@ app.use(parserMiddleware);
 app.use(potterFactRouter);
 app.use(potterQuoteRouter);
 app.use(potterHeadRouter);
+app.use(authRouter);
 
 app.listen(port, () => console.log(`Hey, I'm on port ${port}!`));
