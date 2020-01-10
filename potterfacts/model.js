@@ -1,9 +1,8 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
 
-const PotterFacts = db.define("potterfact", {
-  fact: { type: Sequelize.STRING },
-  source: { type: Sequelize.STRING }
+const PotterFact = db.define("potterfact", {
+  fact: { type: Sequelize.STRING }
 });
 
-module.exports = PotterFacts;
+module.exports = PotterFact;

@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const Sse = require("json-sse");
 const stream = new Sse();
 
+const potterFactRouter = require("./potterfacts/router");
+
 const port = process.env.PORT || 4002;
 const app = express();
 
@@ -12,5 +14,7 @@ const parserMiddleware = bodyParser.json();
 
 app.use(corsMiddleware);
 app.use(parserMiddleware);
+
+app.use(potterFactRouter);
 
 app.listen(port, () => console.log(`Hey, I'm on port ${port}!`));
