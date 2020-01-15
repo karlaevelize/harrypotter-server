@@ -16,7 +16,7 @@ router.post("/potternews", (request, response, next) =>
 );
 
 router.get("/potternews/:id", (request, response, next) =>
-  PotterNews.findByPk(request.params.id)
+  PotterNews.findByPk(request.params.id, { include: [Comments] })
     .then(result => response.send(result))
     .catch(error => response.status(404).json({ error }))
 );
