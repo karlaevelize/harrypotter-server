@@ -5,12 +5,12 @@ const Sse = require("json-sse");
 const stream = new Sse();
 
 const PotterMessage = require("./pottermessages/model");
-const PotterNews = require("./potternews/model");
-const Comments = require("./comments/model");
 
 const potterFactRouter = require("./potterfacts/router");
 const potterQuoteRouter = require("./potterquotes/router");
 const potterHeadRouter = require("./potterheads/router");
+const potterNewsRouter = require("./potternews/router");
+const commentsRouter = require("./comments/router");
 const authRouter = require("./auth/router");
 const potterMessageRouterFactory = require("./pottermessages/router");
 
@@ -27,6 +27,8 @@ app.use(parserMiddleware);
 app.use(potterFactRouter);
 app.use(potterQuoteRouter);
 app.use(potterHeadRouter);
+app.use(potterNewsRouter);
+app.use(commentsRouter);
 app.use(authRouter);
 app.use(potterMessageRouter);
 
