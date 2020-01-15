@@ -5,6 +5,8 @@ const Sse = require("json-sse");
 const stream = new Sse();
 
 const PotterMessage = require("./pottermessages/model");
+const PotterNews = require("./potternews/model");
+const Comments = require("./comments/model");
 
 const potterFactRouter = require("./potterfacts/router");
 const potterQuoteRouter = require("./potterquotes/router");
